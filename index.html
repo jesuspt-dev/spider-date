@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff5d9e" />
+  <title>Cita desbloqueable</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="aurora"></div>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <main id="app" class="app-shell">
+    <section class="screen active" data-screen="intro">
+      <div class="hero-card glass">
+        <div class="badge">Misión secreta · Spider-Date</div>
+        <h1>Este viernes tienes una cita conmigo.</h1>
+        <p class="lead">Pero antes vamos a diseñarla como se merece: comida, peli, flores, outfit y un pequeño examen sorpresa.</p>
+        <div class="hero-art">
+          <span>🕷️</span><span>🍣</span><span>🎬</span><span>🌸</span>
+        </div>
+        <button class="primary" data-action="start">Empezar misión</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="planner">
+      <header class="topbar">
+        <button class="ghost icon" data-action="back" aria-label="Atrás">←</button>
+        <div>
+          <p class="eyebrow">Fase 1</p>
+          <h2>Diseña la cita</h2>
+        </div>
+        <div class="step-pill"><span id="plannerStep">1</span>/9</div>
+      </header>
+      <div class="progress"><span id="plannerProgress"></span></div>
+      <div id="plannerContent" class="card-stack"></div>
+    </section>
+
+    <section class="screen" data-screen="locked">
+      <div class="lock-card glass">
+        <div class="lock-orb">🔒</div>
+        <p class="eyebrow">Fase 2</p>
+        <h2>Cita casi reservada</h2>
+        <p>Has elegido una cita con alto potencial, pero el sistema ha detectado un requisito académico pendiente.</p>
+        <div class="warning-box">
+          Para desbloquearla tienes que aprobar un test de <strong>Contabilidad Financiera II</strong>: 12 preguntas, dificultad creciente. Si fallas, vuelves a empezar.
+        </div>
+        <button class="primary dark" data-action="startQuiz">Desbloquear cita</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="quiz">
+      <header class="topbar">
+        <button class="ghost icon" data-action="exitQuiz" aria-label="Salir">×</button>
+        <div>
+          <p class="eyebrow" id="difficultyLabel">Nivel fácil</p>
+          <h2>Examen sorpresa</h2>
+        </div>
+        <div class="step-pill"><span id="quizStep">1</span>/12</div>
+      </header>
+      <div class="progress"><span id="quizProgress"></span></div>
+      <div id="quizContent" class="quiz-card glass"></div>
+    </section>
+
+    <section class="screen" data-screen="fail">
+      <div class="fail-card glass">
+        <div class="big-emoji">💀</div>
+        <h2>Has suspendido.</h2>
+        <p>La cita se ha vuelto a bloquear. Una contable de 2º de ADE no puede caer aquí.</p>
+        <button class="primary" data-action="retryQuiz">Repetir examen</button>
+        <button class="ghost" data-action="reviewPlan">Ver plan de cita</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="success">
+      <div class="success-card glass">
+        <div class="big-emoji">🎉</div>
+        <h2>Cita desbloqueada</h2>
+        <p>Has aprobado. La reserva queda oficialmente autorizada por el departamento de amor y contabilidad.</p>
+        <div id="summary" class="summary"></div>
+        <button class="primary" data-action="reserve">Reservar cita</button>
+        <button class="ghost" data-action="restart">Cambiar respuestas</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="ticket">
+      <div class="ticket">
+        <div class="ticket-header">
+          <span>🕷️</span>
+          <div>
+            <p>Spider-Date Pass</p>
+            <h2>Reserva completada</h2>
+          </div>
+        </div>
+        <div class="ticket-body">
+          <p><strong>Plan:</strong> Comer + Spider-Man: Brand New Day</p>
+          <p><strong>Estado:</strong> Confirmado por guapa y aprobada</p>
+          <p><strong>Condición:</strong> Ven con ganas de pasarlo bien y dejarte querer.</p>
+        </div>
+        <button class="primary" data-action="share">Copiar resumen</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+</body>
+</html>
