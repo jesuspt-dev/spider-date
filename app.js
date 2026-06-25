@@ -1,12 +1,5 @@
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
-
-let emailjsConfig = {
-  publicKey: 'zl_ycJiJe3xEzX3kQ',
-  serviceId: 'service_spider',
-  templateId: 'template_spider'
-};
-
 const state = {
   screen: 'intro', plannerIndex: 0, quizIndex: 0,
   answers: JSON.parse(localStorage.getItem('spiderDateAnswers') || '{}'),
@@ -42,7 +35,7 @@ const bank = [
 ];
 
 // Inicializar EmailJS
-emailjs.init(emailjsConfig.publicKey);
+emailjs.init('zl_ycJiJe3xEzX3kQ');
 
 function save(){localStorage.setItem('spiderDateAnswers', JSON.stringify(state.answers));}
 function show(name){state.screen=name; $$('.screen').forEach(s=>s.classList.toggle('active',s.dataset.screen===name)); if(name==='planner') renderPlanner(); if(name==='success') renderSummary();}
@@ -93,7 +86,7 @@ function sendEmail(){
     message: `¡Hola!\n\nCita confirmada para el 29 de Julio\n\nDetalles planificados:\n\n${answerText}\n\n¡Que disfrutes! 🎉`
   };
   
-  emailjs.send(emailjsConfig.serviceId, emailjsConfig.templateId, templateParams)
+  emailjs.send('service_spider', 'template_spider', templateParams)
     .then(response => {
       console.log('Email enviado:', response);
       toast('✓ ¡Email enviado correctamente!');
