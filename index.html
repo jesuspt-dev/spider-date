@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#ff5d9e" />
-  <title>Cita desbloqueable</title>
+  <meta name="description" content="Spider-Date: Una cita desbloqueable con examen de contabilidad. El 29 de Julio tienes una cita conmigo." />
+  <meta name="og:title" content="Spider-Date 🕷️" />
+  <meta name="og:description" content="Diseña la cita perfecta y aprueba un examen de contabilidad" />
+  <title>Spider-Date 🕷️ - Cita Desbloqueable</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
@@ -17,22 +20,22 @@
   <main id="app" class="app-shell">
     <section class="screen active" data-screen="intro">
       <div class="hero-card glass">
-        <div class="badge">Misión secreta · Spider-Date</div>
+        <div class="badge">🕷️ Misión Secreta</div>
         <h1>El 29 de Julio tienes una cita conmigo.</h1>
         <p class="lead">Pero antes vamos a diseñarla como se merece: comida, peli, flores, outfit y un pequeño examen sorpresa.</p>
         <div class="hero-art">
           <span>🕷️</span><span>🍣</span><span>🎬</span><span>🌸</span>
         </div>
-        <button class="primary" data-action="start">Empezar misión</button>
+        <button class="primary" data-action="start">Empezar Misión</button>
       </div>
     </section>
 
     <section class="screen" data-screen="planner">
       <header class="topbar">
-        <button class="ghost icon" data-action="back" aria-label="Atrás">←</button>
+        <button class="ghost icon" data-action="back" aria-label="Volver atrás">←</button>
         <div>
           <p class="eyebrow">Fase 1</p>
-          <h2>Diseña la cita</h2>
+          <h2>Diseña la Cita</h2>
         </div>
         <div class="step-pill"><span id="plannerStep">1</span>/9</div>
       </header>
@@ -44,21 +47,21 @@
       <div class="lock-card glass">
         <div class="lock-orb">🔒</div>
         <p class="eyebrow">Fase 2</p>
-        <h2>Cita casi reservada</h2>
+        <h2>Cita casi Reservada</h2>
         <p>Has elegido una cita con alto potencial, pero el sistema ha detectado un requisito académico pendiente.</p>
         <div class="warning-box">
           Para desbloquearla tienes que aprobar un test de <strong>Contabilidad Financiera II</strong>: 12 preguntas, dificultad creciente. Si fallas, vuelves a empezar.
         </div>
-        <button class="primary dark" data-action="startQuiz">Desbloquear cita</button>
+        <button class="primary dark" data-action="startQuiz">🔓 Desbloquear Cita</button>
       </div>
     </section>
 
     <section class="screen" data-screen="quiz">
       <header class="topbar">
-        <button class="ghost icon" data-action="exitQuiz" aria-label="Salir">×</button>
+        <button class="ghost icon" data-action="exitQuiz" aria-label="Salir del examen">×</button>
         <div>
           <p class="eyebrow" id="difficultyLabel">Nivel fácil</p>
-          <h2>Examen sorpresa</h2>
+          <h2>Examen Sorpresa</h2>
         </div>
         <div class="step-pill"><span id="quizStep">1</span>/12</div>
       </header>
@@ -69,21 +72,21 @@
     <section class="screen" data-screen="fail">
       <div class="fail-card glass">
         <div class="big-emoji">💀</div>
-        <h2>Has suspendido.</h2>
-        <p>La cita se ha vuelto a bloquear. Una contable de 2º de ADE no puede caer aquí.</p>
-        <button class="primary" data-action="retryQuiz">Repetir examen</button>
-        <button class="ghost" data-action="reviewPlan">Ver plan de cita</button>
+        <h2>Has Suspendido</h2>
+        <p>La cita se ha vuelto a bloquear. Una contable de 2º de ADE no puede fallar así.</p>
+        <button class="primary" data-action="retryQuiz">🔄 Repetir Examen</button>
+        <button class="ghost" data-action="reviewPlan">📋 Ver Plan de Cita</button>
       </div>
     </section>
 
     <section class="screen" data-screen="success">
       <div class="success-card glass">
         <div class="big-emoji">🎉</div>
-        <h2>Cita desbloqueada</h2>
+        <h2>¡Cita Desbloqueada!</h2>
         <p>Has aprobado. La reserva queda oficialmente autorizada por el departamento de amor y contabilidad.</p>
         <div id="summary" class="summary"></div>
-        <button class="primary" data-action="reserve">Reservar cita</button>
-        <button class="ghost" data-action="restart">Cambiar respuestas</button>
+        <button class="primary" data-action="reserve">📧 Reservar & Enviar</button>
+        <button class="ghost" data-action="restart">✏️ Cambiar Respuestas</button>
       </div>
     </section>
 
@@ -93,19 +96,19 @@
           <span>🕷️</span>
           <div>
             <p>Spider-Date Pass</p>
-            <h2>Reserva completada</h2>
+            <h2>Reserva Completada</h2>
           </div>
         </div>
         <div class="ticket-body">
-          <p><strong>Plan:</strong> Comer + Spider-Man: Brand New Day</p>
-          <p><strong>Estado:</strong> Confirmado por guapa y aprobada</p>
+          <p><strong>Fecha:</strong> 29 de Julio</p>
+          <p><strong>Estado:</strong> ✓ Confirmado y Aprobado</p>
           <p><strong>Condición:</strong> Ven con ganas de pasarlo bien y dejarte querer.</p>
         </div>
-        <button class="primary" data-action="share">Copiar resumen</button>
+        <button class="primary" data-action="share">📋 Copiar Resumen</button>
       </div>
     </section>
   </main>
 
-  <div id="toast" class="toast"></div>
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 </body>
 </html>
